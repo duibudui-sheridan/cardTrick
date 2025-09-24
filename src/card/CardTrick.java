@@ -34,8 +34,7 @@ public class CardTrick {
         luckyCard.setSuit(Card.SUITS[3]);
         
         
-        boolean hasCard = hasTheCard(magicHand, luckyCard);
-        System.out.println(hasCard?"You win! The Lucky Card is in the Magic Hand!":"You lose. The Lucky Card is not in the Magic Hand.");
+        
         
        
     }

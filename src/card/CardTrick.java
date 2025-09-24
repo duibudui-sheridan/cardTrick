@@ -29,32 +29,15 @@ public class CardTrick {
             System.out.println(c.getSuit()+" "+c.getValue());
         }
         
+        Card luckyCard=new Card();
+        luckyCard.setValue(2);
+        luckyCard.setSuit(Card.SUITS[3]);
+        
+        
+        boolean hasCard = hasTheCard(magicHand, luckyCard);
+        System.out.println(hasCard?"You win! The Lucky Card is in the Magic Hand!":"You lose. The Lucky Card is not in the Magic Hand.");
+        
        
-        
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter a card value (1-13): ");
-        int value= scan.nextInt();
-        scan.nextLine();
-        
-        System.out.print("Enter a suit (0-3 where 0=Hearts, 1=Diamonds, 2=Clubs, 3=Spades): ");
-        int suitNum= scan.nextInt();
-        scan.nextLine();
-        
-        Card playersCard = new Card();
-        playersCard.setValue(value);
-        playersCard.setSuit(Card.SUITS[suitNum]);
-        
-        
-        boolean hasCard = hasTheCard(magicHand, playersCard);
-        System.out.println(hasCard?"Your card is in the magic hand":"Your card is not in the magic hand");
-        
-        
-        
-        
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
-        // add one luckcard hard code 2,clubs
     }
     
     public static boolean hasTheCard(Card[] inHand, Card playCard) {

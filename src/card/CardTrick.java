@@ -26,19 +26,23 @@ public class CardTrick {
             c.setValue((int)(Math.random()*13)+1); 
             c.setSuit(Card.SUITS[(int)(Math.random()*4)]);
             magicHand[i]=c;
+            System.out.println(c.getSuit()+" "+c.getValue());
         }
         
+       
+        
         Scanner scan = new Scanner(System.in);
-        System.out.println("What is the card's value?");
+        System.out.print("Enter a card value (1-13): ");
         int value= scan.nextInt();
         scan.nextLine();
         
-        System.out.println("What is the card's suit?");
-        String suit= scan.nextLine().toLowerCase();
+        System.out.print("Enter a suit (0-3 where 0=Hearts, 1=Diamonds, 2=Clubs, 3=Spades): ");
+        int suitNum= scan.nextInt();
+        scan.nextLine();
         
         Card playersCard = new Card();
         playersCard.setValue(value);
-        playersCard.setSuit(suit);
+        playersCard.setSuit(Card.SUITS[suitNum]);
         
         
         boolean hasCard = hasTheCard(magicHand, playersCard);
@@ -55,7 +59,7 @@ public class CardTrick {
     
     public static boolean hasTheCard(Card[] inHand, Card playCard) {
             for (Card c1: inHand) {
-                if (c1.getValue()==playCard.getValue() && c1.getSuit().toLowerCase().equals(playCard.getSuit())) {
+                if (c1.getValue()==playCard.getValue() && c1.getSuit().equals(playCard.getSuit())) {
                     return true;
                 }
             }

@@ -29,7 +29,7 @@ public class CardTrick {
             System.out.println(c.getSuit()+" "+c.getValue());
         }
 
-        Scanner scan = new Scanner(System.in);
+        /*Scanner scan = new Scanner(System.in);
         System.out.print("Enter a card value (1-13): ");
         int value= scan.nextInt();
         scan.nextLine();
@@ -43,15 +43,18 @@ public class CardTrick {
         playersCard.setSuit(Card.SUITS[suitNum]);
         
         
+        
         boolean hasCard = hasTheCard(magicHand, playersCard);
         System.out.println(hasCard?"Your card is in the magic hand":"Your card is not in the magic hand");
-
+        */
         
         
         Card luckyCard=new Card();
         luckyCard.setValue(2);
         luckyCard.setSuit(Card.SUITS[3]);
         
+        boolean hasCard = hasTheCard(magicHand, luckyCard);
+        System.out.println(hasCard?"You win! The lucky card is in the magic hand.":"You lose. The lucky card is not in the magic hand.");
        
     }
     
